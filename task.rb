@@ -14,6 +14,8 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
+  array1.push(array2)
+  puts array1
 
 end
 
@@ -21,6 +23,8 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
+  numbers.count(3)
+  puts numbers.count(3)
 
 end
 
@@ -28,6 +32,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
+  sports.delete(nil)
 
   # 以下は変更しないで下さい
   p sports
@@ -38,6 +43,8 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
+  puts "array1:#{array1.empty?}"
+  puts "array2:#{array2.empty?}"
 
 end
 
@@ -45,6 +52,10 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
+  puts "numbers2:"
+  numbers1.each do |number|
+    puts number*10
+  end
 
 end
 
@@ -52,7 +63,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-
+  array = array.map(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -61,6 +72,14 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
+  programming_languages.each do |str1|
+    str1.capitalize!
+  end
+
+  upper_case_programming_languages = programming_languages.dup
+  upper_case_programming_languages.each do |str2|
+    str2.upcase!
+  end
 
   # 以下は変更しないで下さい
   p programming_languages
@@ -71,6 +90,9 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
+  names.each.with_index do |name, i|
+    puts "会員No.#{i} #{name}さん"
+  end
 
 end
 
@@ -78,6 +100,9 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
+  foods.each do |food|
+    food.include?("うに") ? (puts "#{food}:好物です") : (puts "#{food}:まあまあ好きです")
+  end
 
 end
 
@@ -85,7 +110,10 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  puts "ユーザーの趣味一覧"
+  sports.each.with_index do |sport, i|
+    puts "No#{i} #{sport}"
+  end
 end
 
 def q12
