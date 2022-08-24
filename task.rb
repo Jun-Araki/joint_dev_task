@@ -6,8 +6,9 @@ def q1
 
   # 以下に回答を記載
   # names.push("斎藤")
-  names.<<("斎藤")
-  puts names
+  # names.<<("斎藤")
+  # puts names
+  puts names.<<("斎藤")
 end
 
 def q2
@@ -25,8 +26,9 @@ def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-  num3 = numbers.count(3)
-  puts num3
+  # num3 = numbers.count(3)
+  # puts num3
+  puts numbers.count(3)
 
 end
 
@@ -98,7 +100,7 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each.with_index do |name, i|
+  names.each.with_index(1) do |name, i|
     puts "会員No.#{i} #{name}さん"
   end
 
@@ -155,8 +157,9 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
+  array = []
   data.each do |key_value|
-    array = [key_value]
+    array = array + [key_value]
   end
 
   puts array
@@ -168,6 +171,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  (data1.include?(:age)) ? (puts "OK") : (puts "NG")
+  (data2.include?(:age)) ? (puts "OK") : (puts "NG")
 
 end
 
@@ -180,6 +185,9 @@ def q16
   ]
 
   # 以下に回答を記載
+  users.each do |value|
+    puts "私の名前は#{value[:name]}です。年齢は#{value[:age]}歳です。"
+  end
 
 end
 
