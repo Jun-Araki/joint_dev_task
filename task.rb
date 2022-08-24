@@ -35,7 +35,9 @@ def q4
 
   # 以下に回答を記載
   # sports.delete(nil)
-  sports = sports.compact
+  # sports = sports.compact
+  sports.compact!
+
   # 以下は変更しないで下さい
   p sports
 end
@@ -66,7 +68,8 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array = array.map(&:to_i)
+  # array = array.map!(&:to_i)
+  array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -120,7 +123,7 @@ end
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
-  # 以下に回答を記載
+  # 以下に回答を記載ˇß
   puts "ユーザーの趣味一覧"
   flatten_sports = sports.flatten.uniq
 
@@ -133,6 +136,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
+  puts data[:user][:name]
 
 end
 
@@ -141,13 +145,21 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  user_data[:name] = update_data[:name] if update_data[:name]
+  user_data[:age] = update_data[:age] if update_data[:age]
+  user_data[:address] = update_data[:address] if update_data[:address]
+  puts user_data
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
+  data.each do |key_value|
+    array = [key_value]
+  end
+
+  puts array
 
 end
 
