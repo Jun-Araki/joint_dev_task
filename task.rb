@@ -147,9 +147,11 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  user_data[:name] = update_data[:name] if update_data[:name]
-  user_data[:age] = update_data[:age] if update_data[:age]
-  user_data[:address] = update_data[:address] if update_data[:address]
+  # user_data[:name] = update_data[:name] if update_data[:name]
+  # user_data[:age] = update_data[:age] if update_data[:age]
+  # user_data[:address] = update_data[:address] if update_data[:address]
+
+  user_data.merge!(update_data)
   puts user_data
 end
 
@@ -157,11 +159,12 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-  array = []
-  data.each do |key_value|
-    array = array + [key_value]
-  end
+  # array = []
+  # data.each do |key_value|
+  #   array = array + [key_value]
+  # end
 
+  array = data.keys
   puts array
 
 end
@@ -171,8 +174,10 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  (data1.include?(:age)) ? (puts "OK") : (puts "NG")
-  (data2.include?(:age)) ? (puts "OK") : (puts "NG")
+  # (data1.include?(:age)) ? (puts "OK") : (puts "NG")
+  # (data2.include?(:age)) ? (puts "OK") : (puts "NG")
+  puts data1.include?(:age) ? "OK" : "NG"
+  puts data2.include?(:age) ? "OK" : "NG"
 
 end
 
