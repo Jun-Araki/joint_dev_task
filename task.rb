@@ -200,10 +200,10 @@ class UserQ17
   # 以下に回答を記載
   attr_accessor :name, :age, :gender
 
-  def initialize(params)
-    @name   = params[:name]
-    @age    = params[:age]
-    @gender = params[:gender]
+  def initialize(name:, age:, gender:)
+    @name   = name
+    @age    = age
+    @gender = gender
   end
 
   def info
@@ -229,6 +229,21 @@ end
 class UserQ18
   # 以下に回答を記載
 
+  attr_accessor :name, :age
+
+  def initialize(name:, age:)
+    @name = name
+    @age  = age
+  end
+
+  def introduce
+    if @age >= 18
+      "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    else
+      "はいさいまいど〜，#{@name}です！！！" 
+    end
+  end
+
 end
 
 def q18
@@ -242,10 +257,12 @@ end
 
 class Item
   # 以下を修正して下さい
+  attr_accessor :name
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
   end
+
 end
 
 def q19
@@ -256,11 +273,35 @@ end
 
 class UserQ20
   # 以下に回答を記載
+  attr_accessor :name, :age
+
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 
 end
 
 class Zoo
   # 以下に回答を記載
+  attr_accessor :name, :entry_fee
+
+  def initialize(name:, entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
+  end
+
+  def info_entry_fee
+    if user[:age] <= 5
+      "#{user[:name]}さんの入場料金は#{entry_fee[:infant]}円です。"
+    elsif user[:age] <= 12
+      "#{user[:name]}さんの入場料金は#{entry_fee[:children]}円です。"
+    elsif user[:age] <= 64
+      "#{user[:name]}さんの入場料金は#{entry_fee[:adult]}円です。"
+    else
+      "#{user[:name]}さんの入場料金は#{entry_fee[:senior]}円です。"
+    end
+  end
 
 end
 
@@ -268,6 +309,7 @@ end
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
   zoo = Zoo.new(name: "旭山動物園", entry_fee: { infant: 0, children: 400, adult: 800, senior: 500 })
+  # zoo = Zoo.new(name: "旭山動物園", entry_fee: 0)
 
   users = [
     UserQ20.new(name: "たま", age: 3),
